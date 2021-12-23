@@ -83,13 +83,6 @@ def create_app():
             sres = results,
             recommended = pred_songs_info_list
         )
-
-
-    @APP.route('/How-It-Works', methods=['GET', "POST"])
-    def how_it_works():
-        '''Page that explains the process'''
-
-        return render_template('how-it-works.html')
     
     @APP.route('/About-The-Team', methods=['GET', "POST"])
     def about_the_team():
