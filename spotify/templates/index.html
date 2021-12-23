@@ -1,0 +1,95 @@
+<html>
+    
+    <style>
+    body {
+    background-color: rgb(61, 58, 58);
+    }
+
+    a {
+    color: rgb(114, 65, 1);
+    }
+
+    body {
+    color: rgb(255, 253, 254);
+    }
+
+    h1 {
+    color: rgb(255, 253, 254);
+    }
+
+    div {
+    color: rgb(255, 253, 254);
+    }
+    
+    audio {
+        display: block;
+        width: 300px;
+        height: 25px;
+    }
+
+
+    #firstdiv {
+                float:left; 
+                width:25%;
+                height:900px;
+            }
+    #seconddiv{
+                float:right; 
+                width:50%;
+                height:280px;
+                }
+    </style>
+
+
+    <head>
+        <title>Spotify Suggester</title>
+    </head>
+
+    <body>
+
+
+        <h1>Spotify Song Suggester</h1>
+        <a href="/">Home</a>
+        <a href="/How-It-Works">The Process</a>
+        <a href="/About-The-Team">Meet The Team</a>
+        <hr />
+        
+        <div align="center"> 
+        <div id="firstdiv">
+            <h2>Enter Song Name</h2>
+            <form method="POST" action="/">
+                <input type="text" name="name">
+                <input type="submit" value="Search">
+            </form>
+            
+            {% if error %}
+            {% endif %}
+
+            {% if search %}
+                <img src="{{sres['image']}}" alt="album thumbnail">
+                <h3><a href="{{sres['url']}}" target="_blank">{{sres['song']}}</a> by {{sres['artist']}}</h3>
+                <audio controls="controls">
+                    <source src="{{sres['preview_url']}}" type="audio/mpeg"/>
+                </audio>
+            {% endif %}
+        </div>
+
+        <div align="center"> 
+        <div class="seconddiv">
+            {% if search %}
+                <h2>Recommended Songs</h2>
+
+                {% for song in recommended %}
+                <h4><a href="{{song['url']}}" target="_blank">{{song['song']}}</a> by {{song['artist']}} </h4>
+                <audio controls="controls">
+                    <source src="{{song['preview_url']}}" type="audio/mpeg"/>
+                </audio>              
+                {% endfor %}
+            {% endif %}
+        </div>
+
+
+        
+    </body>
+
+</html>
