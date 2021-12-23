@@ -33,6 +33,7 @@ Display of the team with their LinkedIn pages.
 - numpy
 - dill
 - matplotlib
+- seaborn
 
 ## Instructions for Cloning, Installing, and Running Locally
 Step 1: Get Spotify API key at https://developer.spotify.com/documentation/web-api/quick-start/
@@ -41,7 +42,7 @@ Step 2: Clone repository
 Step 3: Start VM
     `$ pipenv shell`
 Step 4: Install package dependencies
-    `$ pipenv install pandas flask jinja2 spotify python-dotenv scikit-learn gunicorn requests spotipy numpy dill matplotlib`
+    `$ pipenv install pandas flask jinja2 spotify python-dotenv scikit-learn gunicorn requests spotipy numpy dill matplotlib seaborn`
 Step 5: Create .env file within 'spotify-recommender-5' folder
     `$ touch .env`
 Step 6: Add API information in .env file
