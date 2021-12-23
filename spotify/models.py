@@ -29,7 +29,7 @@ def knn(list_of_feats):
 
 
 def graph(list_of_ids, list_of_feats):
-    model = pickle.load(open("ordinary_knn", "rb"))
+    model = pickle.load(open("spotify/norm_knn_classless", "rb"))
     distance, neighbors_indexes = model.kneighbors([list_of_feats])
     if distance == []:
         return []
