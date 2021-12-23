@@ -30,7 +30,6 @@ Display of the team with their LinkedIn pages.
 - gunicorn
 - requests
 - spotipy
-- pandas
 - numpy
 - dill
 - matplotlib
@@ -42,7 +41,7 @@ Step 2: Clone repository
 Step 3: Start VM
     `$ pipenv shell`
 Step 4: Install package dependencies
-    `$ pipenv install pandas flask jinja2 spotify python-dotenv scikit-learn gunicorn requests spotipy pandas numpy dill matplotlib`
+    `$ pipenv install pandas flask jinja2 spotify python-dotenv scikit-learn gunicorn requests spotipy numpy dill matplotlib`
 Step 5: Create .env file within 'spotify-recommender-5' folder
     `$ touch .env`
 Step 6: Add API information in .env file
