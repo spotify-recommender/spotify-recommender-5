@@ -3,7 +3,7 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from .functions import get_track_info, get_track_feats
-from .models import knn
+from .models import knn, graph
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -52,6 +52,7 @@ def create_app():
             # to get back a list of song ids
             ids = knn(list_of_track_feats)
 
+            graph(ids, list_of_track_feats)
             # If statement so if the search id is equal
             # to the first id in the list. it will skip the first
             # song and use the last 10.
